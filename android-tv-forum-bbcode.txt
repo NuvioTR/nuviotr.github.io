@@ -1,0 +1,52 @@
+[CENTER][SIZE=5][B]NuvioTR özel sürümünün yenilikleri[/B][/SIZE][/CENTER]
+
+[B]01 · Katalog + yayın yetenekleri[/B]
+[SIZE=4]Nuvio eklentileri daha esnek[/SIZE]
+
+Nuvio eklentilerinde katalog ve yayın yetenekleri artık birbirinden bağımsız çalışır. Yalnızca katalog sunan bir eklenti, kendi içerik raflarını gösterebilir; yayın sunan eklentiler ise seçili içeriğin kaynaklarını bulmak için kullanılabilir.
+
+[IMG]https://nuviotr.github.io/images/1.png[/IMG]
+
+[B]02 · Siteyi katalog olarak kullanın[/B]
+[SIZE=4]Cloudstream eklentilerinden ana sayfa rafları[/SIZE]
+
+Cloudstream uyumlu bir site eklentisinin ana sayfa içeriği Nuvio’ya aktarılır. Sitenin kategorileri raflara, içerikleri de posterlerle gezilebilen bir kataloğa dönüşür.
+
+[B]Uyarı:[/B] Bazı Cloudstream eklentileri kararsız çalışabilir.
+
+[IMG]https://nuviotr.github.io/images/2.png[/IMG]
+
+[B]03 · Ayrı katalog ve kaynak seçimi[/B]
+[SIZE=4]Ne izleyeceğinizi ve nereden izleyeceğinizi ayırın[/SIZE]
+
+Ana sayfadaki Katalog menüsü görünmesini istediğiniz rafları seçer. Kaynak menüsü ise oynatma için kullanılacak eklentiyi belirler. Aynı eklenti hem katalog hem yayın sağlıyorsa seçimler birlikte kullanılabilir; isterseniz kaynağı sonradan değiştirebilirsiniz.
+
+[IMG]https://nuviotr.github.io/images/3.png[/IMG]
+
+[B]04 · Kaynak bağlamı korunur[/B]
+[SIZE=4]Seçtiğiniz sitenin içeriği doğru eklentiyle açılır[/SIZE]
+
+Bir site kataloğundan seçilen içerikte, o siteye ait bağlantı ilgili eklentiyle birlikte korunur. Böylece içerik ayrıntısı ve oynatma zinciri, katalog kaynağının bağlamını kaybetmeden ilerler.
+
+[IMG]https://nuviotr.github.io/images/4.png[/IMG]
+
+[B]05 · Site yorumları[/B]
+[SIZE=4]Film ve dizi yorumlarını uygulamada görün[/SIZE]
+
+Sevdiğiniz sitenin film veya dizi sayfasındaki yorumlarını Nuvio içinde görebilirsiniz. Bu özellik, yalnızca kullandığınız sitenin ve eklentinin yorum desteği sunması durumunda kullanılabilir.
+
+[IMG]https://nuviotr.github.io/images/5.png[/IMG]
+
+[B]06 · Site içinde arama[/B]
+[SIZE=4]Aradığınız filmi veya diziyi sitede bulun[/SIZE]
+
+Bir site eklentisi aramayı destekliyorsa, o sitenin içeriklerinde Nuvio içinden arama yapabilirsiniz. Arama sonuçları doğrudan eklentinin sağladığı içeriklerden gelir.
+
+[IMG]https://nuviotr.github.io/images/6.png[/IMG]
+
+[B]07 · NuvioTR güncel depoları[/B]
+[SIZE=4]Depoları uygulama içinden kurun veya kaldırın[/SIZE]
+
+NuvioTR’de listelenen güncel eklenti, katalog ve koleksiyon depolarına uygulama içinden erişebilirsiniz. İhtiyacınız olan depoyu kurabilir; kullanmadığınız depoları aynı yerden kaldırarak listenizi düzenleyebilirsiniz.
+
+[IMG]https://nuviotr.github.io/images/7.png[/IMG]
