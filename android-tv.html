@@ -4,34 +4,491 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#070b18">
-    <meta name="description" content="NuvioTR Android TV uygulaması hakkında bilgiler.">
+    <meta name="description" content="NuvioTR Android TV özel sürümü: Nuvio katalogları ve Cloudstream site eklentileri.">
     <title>NuvioTR Android TV Uygulaması</title>
     <style>
-      :root { --bg: #070b18; --text: #f6f8ff; --muted: #a8b2ce; --line: rgba(180, 198, 255, .15) }
-      * { box-sizing: border-box }
-      body { min-width: 320px; min-height: 100vh; margin: 0; color: var(--text); background: radial-gradient(circle at 18% -5%, rgba(103, 77, 212, .34), transparent 32rem), radial-gradient(circle at 88% 16%, rgba(26, 165, 209, .19), transparent 29rem), var(--bg); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif }
-      main { width: min(760px, calc(100% - 40px)); margin: auto; padding: 25px 0 72px }
-      .brand { display: inline-flex; gap: 11px; align-items: center; color: var(--text); font-size: 1.15rem; font-weight: 800; letter-spacing: -.04em; text-decoration: none }
-      .brand-mark { display: grid; place-items: center; width: 31px; height: 31px; overflow: hidden; border-radius: 10px; background: #fff; box-shadow: 0 5px 20px rgba(53, 217, 255, .25) }
-      .brand-mark img { width: 100%; height: 100%; object-fit: contain }
-      section { margin-top: 80px; padding: clamp(25px, 6vw, 52px); border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(145deg, rgba(27, 38, 68, .94), rgba(13, 19, 36, .95)); box-shadow: 0 22px 55px rgba(0, 0, 0, .22) }
-      .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 100px; color: #c8d0e8; background: rgba(17, 24, 44, .55); font-size: .78rem; font-weight: 650 }
-      .dot { width: 7px; height: 7px; border-radius: 50%; background: #65e9ad; box-shadow: 0 0 0 5px rgba(101, 233, 173, .13) }
-      h1 { margin: 20px 0 16px; font-size: clamp(2.2rem, 7vw, 4.4rem); letter-spacing: -.06em; line-height: 1.02 }
-      p { max-width: 550px; margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7 }
-      .back { display: inline-flex; align-items: center; margin-top: 30px; padding: 11px 15px; border: 1px solid var(--line); border-radius: 10px; color: #dce4fa; background: rgba(17, 24, 44, .7); font-size: .9rem; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s }
-      .back:hover { transform: translateY(-2px); background: rgba(36, 49, 84, .8) }
+      :root {
+        --bg: #070b18;
+        --text: #f6f8ff;
+        --muted: #a8b2ce;
+        --line: rgba(180, 198, 255, .15);
+        --purple: #a48bff;
+        --aqua: #80eaff;
+        --green: #65e9ad
+      }
+
+      * {
+        box-sizing: border-box
+      }
+
+      html {
+        scroll-behavior: smooth
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        color: var(--text);
+        background: radial-gradient(circle at 18% -5%, rgba(103, 77, 212, .34), transparent 32rem), radial-gradient(circle at 88% 16%, rgba(26, 165, 209, .19), transparent 29rem), var(--bg);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+      }
+
+      main {
+        width: min(1060px, calc(100% - 40px));
+        margin: auto;
+        padding: 25px 0 72px
+      }
+
+      .brand {
+        display: inline-flex;
+        gap: 11px;
+        align-items: center;
+        color: var(--text);
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: -.04em;
+        text-decoration: none
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 31px;
+        height: 31px;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 5px 20px rgba(53, 217, 255, .25)
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.25fr .75fr;
+        gap: 42px;
+        align-items: end;
+        padding: 88px 0 66px
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 11px;
+        border: 1px solid var(--line);
+        border-radius: 100px;
+        color: #c8d0e8;
+        background: rgba(17, 24, 44, .55);
+        font-size: .78rem;
+        font-weight: 700
+      }
+
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 0 5px rgba(101, 233, 173, .13)
+      }
+
+      h1 {
+        max-width: 720px;
+        margin: 20px 0 18px;
+        font-size: clamp(2.6rem, 6vw, 5.2rem);
+        letter-spacing: -.065em;
+        line-height: 1.01
+      }
+
+      h1 span {
+        background: linear-gradient(95deg, #fff 20%, #b5a6ff 66%, #6fe6ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent
+      }
+
+      .lead {
+        max-width: 660px;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2vw, 1.16rem);
+        line-height: 1.7
+      }
+
+      .test-note {
+        padding: 20px;
+        border: 1px solid rgba(128, 234, 255, .22);
+        border-radius: 16px;
+        color: #cbd8f6;
+        background: linear-gradient(145deg, rgba(29, 48, 80, .75), rgba(18, 26, 51, .8));
+        font-size: .92rem;
+        line-height: 1.6
+      }
+
+      .test-note strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--aqua);
+        font-size: .76rem;
+        letter-spacing: .08em;
+        text-transform: uppercase
+      }
+
+      .features {
+        padding-top: 28px;
+        border-top: 1px solid var(--line)
+      }
+
+      .release-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        margin-bottom: 42px;
+        padding: 21px 23px;
+        border: 1px solid rgba(128, 234, 255, .23);
+        border-radius: 16px;
+        background: rgba(24, 36, 65, .68)
+      }
+
+      .release-panel h2 {
+        margin: 0 0 5px;
+        font-size: 1.12rem;
+        letter-spacing: -.02em
+      }
+
+      .release-panel p {
+        max-width: 670px;
+        margin: 0;
+        color: var(--muted);
+        font-size: .9rem;
+        line-height: 1.55
+      }
+
+      .section-head {
+        max-width: 700px;
+        margin-bottom: 30px
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: clamp(1.65rem, 4vw, 2.35rem);
+        letter-spacing: -.045em
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 20px
+      }
+
+      .feature {
+        display: grid;
+        gap: 22px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(145deg, rgba(27, 38, 68, .94), rgba(13, 19, 36, .95));
+        box-shadow: 0 18px 50px rgba(0, 0, 0, .13)
+      }
+
+      .feature-number {
+        display: block;
+        margin-bottom: 11px;
+        color: var(--aqua);
+        font-size: .75rem;
+        font-weight: 800;
+        letter-spacing: .11em
+      }
+
+      h3 {
+        margin: 0 0 9px;
+        font-size: 1.22rem;
+        letter-spacing: -.025em
+      }
+
+      .feature p {
+        margin: 0;
+        color: #c2cae1;
+        font-size: .94rem;
+        line-height: 1.62
+      }
+
+      .feature-warning {
+        margin: 15px 0 0;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 193, 111, .32);
+        border-radius: 9px;
+        color: #ffe0ab;
+        background: rgba(158, 94, 12, .16);
+        font-size: .81rem;
+        line-height: 1.5
+      }
+
+      .screenshot-slot {
+        display: grid;
+        min-height: 210px;
+        place-items: center;
+        margin: 0;
+        overflow: hidden;
+        border: 1px dashed rgba(128, 234, 255, .38);
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(53, 217, 255, .07), rgba(164, 139, 255, .09));
+        text-align: center
+      }
+
+      .screenshot-slot div {
+        padding: 20px
+      }
+
+      .screenshot-slot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 11px;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, .28)
+      }
+
+      .screenshot-icon {
+        display: block;
+        margin-bottom: 9px;
+        color: var(--aqua);
+        font-size: 1.5rem
+      }
+
+      .screenshot-slot strong {
+        display: block;
+        color: #dce7ff;
+        font-size: .87rem
+      }
+
+      .screenshot-slot span {
+        display: block;
+        margin-top: 5px;
+        color: #92a2c8;
+        font-size: .76rem
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 42px;
+        padding: 25px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(17, 24, 44, .62)
+      }
+
+      .flow-step {
+        position: relative;
+        padding: 4px 20px 4px 0;
+        color: #c7d2ec;
+        font-size: .87rem;
+        line-height: 1.45
+      }
+
+      .flow-step+.flow-step::before {
+        position: absolute;
+        top: 13px;
+        left: -18px;
+        color: var(--purple);
+        content: "→"
+      }
+
+      .flow-step b {
+        display: block;
+        margin-bottom: 4px;
+        color: #fff;
+        font-size: .94rem
+      }
+
+      .release-link,
+      .back {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 18px;
+        padding: 11px 15px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: #dce4fa;
+        background: rgba(17, 24, 44, .7);
+        font-size: .9rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform .2s, background .2s
+      }
+
+      .release-link:hover,
+      .back:hover {
+        transform: translateY(-2px);
+        background: rgba(36, 49, 84, .8)
+      }
+
+      .back {
+        margin-top: 44px
+      }
+
+      footer {
+        padding-top: 30px;
+        color: #7e89a7;
+        font-size: .78rem
+      }
+
+      @media(max-width:760px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 26px;
+          padding: 62px 0 50px
+        }
+
+        .release-panel {
+          display: block
+        }
+
+        .release-panel .release-link {
+          margin-top: 16px
+        }
+
+        .feature {
+          gap: 20px
+        }
+
+        .screenshot-slot {
+          min-height: 180px
+        }
+
+        .flow {
+          grid-template-columns: 1fr;
+          gap: 18px
+        }
+
+        .flow-step+.flow-step::before {
+          top: -17px;
+          left: 0;
+          content: "↓"
+        }
+      }
+
+      @media(max-width:540px) {
+        main {
+          width: min(100% - 28px, 1060px)
+        }
+
+        .release-panel,
+        .feature,
+        .flow {
+          padding: 19px
+        }
+      }
     </style>
   </head>
   <body>
-    <main>
-      <a class="brand" href="index.html"><span class="brand-mark"><img src="images/nuviotr.svg" alt="NuvioTR logosu"></span>NuvioTR</a>
-      <section>
-        <div class="eyebrow"><span class="dot"></span> Android TV</div>
-        <h1>NuvioTR Android TV Uygulaması</h1>
-        <p>Android TV deneyimi için hazırlanan NuvioTR uygulamasıyla ilgili güncellemeler ve indirme bilgileri yakında burada paylaşılacak.</p>
-        <a class="back" href="index.html">← NuvioTR ana sayfasına dön</a>
+    <main><a class="brand" href="index.html"><span class="brand-mark"><img src="images/nuviotr.svg" alt="NuvioTR logosu"></span>NuvioTR</a>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Android TV · NuvioTR özel sürümü</div>
+          <h1 id="page-title">NuvioTR ile <span>siteler de katalogda.</span></h1>
+          <p class="lead">Nuvio’nun katalog ve yayın tabanlı yapısının yanına, Cloudstream benzeri site eklentilerini katalog olarak kullanma özelliği eklenmiş NuvioTR özel sürümüdür.</p>
+        </div>
+        <aside class="test-note"><strong>NuvioTR özel sürümü</strong>NuvioTV’nin özgün deposuyla kod tabanı senkron tutulur. Sevdiğiniz ve takip ettiğiniz bir siteyi, eklentisi aracılığıyla Nuvio ana sayfanızda katalog olarak kullanabilirsiniz.</aside>
       </section>
+      <section class="features" aria-labelledby="features-title">
+        <aside class="release-panel" aria-label="İndirme ve güncelleme bilgisi">
+          <div>
+            <h2>İndirme ve güncellemeler</h2>
+            <p>Uygulamayı GitHub Releases sayfasından indirebilir, güncelleme notlarını inceleyebilirsiniz. Uygulama içi güncelleme desteği sayesinde yeni sürümler uygulama üzerinden de kontrol edilip yüklenebilir.</p>
+          </div><a class="release-link" href="https://github.com/manitux-app/NuvioTV-Test/releases" target="_blank" rel="noreferrer">İndirme ve Güncelleme Notları ↗</a>
+        </aside>
+        <div class="section-head">
+          <h2 id="features-title">NuvioTR özel sürümünün yenilikleri</h2>
+        </div>
+        <div class="feature-list">
+          <article class="feature">
+            <div><span class="feature-number">01 · Katalog + yayın yetenekleri</span>
+              <h3>Nuvio eklentileri daha esnek</h3>
+              <p>Nuvio eklentilerinde katalog ve yayın yetenekleri artık birbirinden bağımsız çalışır. Yalnızca katalog sunan bir eklenti, kendi içerik raflarını gösterebilir; yayın sunan eklentiler ise seçili içeriğin kaynaklarını bulmak için kullanılabilir.</p>
+            </div>
+            <figure class="screenshot-slot" aria-label="Nuvio eklenti yetenekleri ekran görüntüsü alanı">
+              <img src="images/1.png" alt="Nuvio eklentilerinde katalog ve yayın yetenekleri">
+            </figure>
+          </article>
+          <article class="feature">
+            <div><span class="feature-number">02 · Siteyi katalog olarak kullanın</span>
+              <h3>Cloudstream eklentilerinden ana sayfa rafları</h3>
+              <p>Cloudstream uyumlu bir site eklentisinin ana sayfa içeriği Nuvio’ya aktarılır. Sitenin kategorileri raflara, içerikleri de posterlerle gezilebilen bir kataloğa dönüşür.</p>
+              <p class="feature-warning">Uyarı: Bazı Cloudstream eklentileri kararsız çalışabilir.</p>
+            </div>
+            <figure class="screenshot-slot" aria-label="Cloudstream katalog ekran görüntüsü alanı">
+              <img src="images/2.png" alt="Cloudstream site eklentisinden gelen katalog rafları">
+            </figure>
+          </article>
+          <article class="feature">
+            <div><span class="feature-number">03 · Ayrı katalog ve kaynak seçimi</span>
+              <h3>Ne izleyeceğinizi ve nereden izleyeceğinizi ayırın</h3>
+              <p>Ana sayfadaki Katalog menüsü görünmesini istediğiniz rafları seçer. Kaynak menüsü ise oynatma için kullanılacak eklentiyi belirler. Aynı eklenti hem katalog hem yayın sağlıyorsa seçimler birlikte kullanılabilir; isterseniz kaynağı sonradan değiştirebilirsiniz.</p>
+            </div>
+            <figure class="screenshot-slot" aria-label="Katalog ve kaynak menüleri ekran görüntüsü alanı">
+              <img src="images/3.png" alt="Katalog ve kaynak menüleri">
+            </figure>
+          </article>
+          <article class="feature">
+            <div><span class="feature-number">04 · Kaynak bağlamı korunur</span>
+              <h3>Seçtiğiniz sitenin içeriği doğru eklentiyle açılır</h3>
+              <p>Bir site kataloğundan seçilen içerikte, o siteye ait bağlantı ilgili eklentiyle birlikte korunur. Böylece içerik ayrıntısı ve oynatma zinciri, katalog kaynağının bağlamını kaybetmeden ilerler.</p>
+            </div>
+            <figure class="screenshot-slot" aria-label="İçerik ayrıntısı ve oynatma ekran görüntüsü alanı">
+              <img src="images/4.png" alt="İçerik ayrıntısı ve oynatma akışı">
+            </figure>
+          </article>
+          <article class="feature">
+            <div><span class="feature-number">05 · Site yorumları</span>
+              <h3>Film ve dizi yorumlarını uygulamada görün</h3>
+              <p>Sevdiğiniz sitenin film veya dizi sayfasındaki yorumlarını Nuvio içinde görebilirsiniz. Bu özellik, yalnızca kullandığınız sitenin ve eklentinin yorum desteği sunması durumunda kullanılabilir.</p>
+            </div>
+            <figure class="screenshot-slot" aria-label="Film ve dizi yorumları ekran görüntüsü alanı">
+              <img src="images/5.png" alt="Film ve dizi yorumları">
+            </figure>
+          </article>
+          <article class="feature">
+            <div><span class="feature-number">06 · Site içinde arama</span>
+              <h3>Aradığınız filmi veya diziyi sitede bulun</h3>
+              <p>Bir site eklentisi aramayı destekliyorsa, o sitenin içeriklerinde Nuvio içinden arama yapabilirsiniz. Arama sonuçları doğrudan eklentinin sağladığı içeriklerden gelir.</p>
+            </div>
+            <figure class="screenshot-slot" aria-label="Site içi arama ekran görüntüsü alanı">
+              <img src="images/6.png" alt="Site içi film ve dizi araması">
+            </figure>
+          </article>
+          <article class="feature">
+            <div><span class="feature-number">07 · NuvioTR güncel depoları</span>
+              <h3>Depoları uygulama içinden kurun veya kaldırın</h3>
+              <p>NuvioTR’de listelenen güncel eklenti, katalog ve koleksiyon depolarına uygulama içinden erişebilirsiniz. İhtiyacınız olan depoyu kurabilir; kullanmadığınız depoları aynı yerden kaldırarak listenizi düzenleyebilirsiniz.</p>
+            </div>
+            <figure class="screenshot-slot" aria-label="NuvioTR depo kurma ve kaldırma ekran görüntüsü alanı">
+              <img src="images/7.png" alt="NuvioTR depo kurma ve kaldırma">
+            </figure>
+          </article>
+        </div>
+        <div class="flow" aria-label="Katalogdan oynatmaya akış">
+          <div class="flow-step"><b>1. Eklentiyi seçin</b>Takip ettiğiniz siteyi katalog olarak belirleyin.</div>
+          <div class="flow-step"><b>2. Rafları keşfedin</b>Sitenin ana sayfa kategorilerini Nuvio içinde gezin.</div>
+          <div class="flow-step"><b>3. Kaynaktan oynatın</b>İçeriği seçili yayın kaynağıyla açın.</div>
+        </div>
+      </section><a class="back" href="index.html">← NuvioTR ana sayfasına dön</a>
+      <footer>© <span id="year"></span> NuvioTR · Android TV özel sürümü</footer>
     </main>
+    <script>
+      document.querySelector('#year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

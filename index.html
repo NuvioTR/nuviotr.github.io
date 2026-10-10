@@ -229,6 +229,58 @@
         background: rgba(17, 24, 44, .7)
       }
 
+      .button-tv {
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        border-color: rgba(128, 234, 255, .5);
+        background: linear-gradient(115deg, #5540ba, #157da7 58%, #20b7d6);
+        box-shadow: 0 9px 27px rgba(57, 146, 235, .33), inset 0 1px 0 rgba(255, 255, 255, .25)
+      }
+
+      .button-tv::after {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 -75%;
+        width: 45%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .28), transparent);
+        transform: skewX(-22deg);
+        transition: left .55s ease
+      }
+
+      .button-tv:hover {
+        border-color: rgba(213, 249, 255, .85);
+        box-shadow: 0 13px 34px rgba(57, 146, 235, .48), inset 0 1px 0 rgba(255, 255, 255, .3)
+      }
+
+      .button-tv:hover::after { left: 130% }
+
+      .tv-icon {
+        display: grid;
+        position: relative;
+        z-index: 1;
+        place-items: center;
+        width: 20px;
+        height: 16px;
+        color: #102848;
+        border-radius: 5px;
+        background: #dffbff;
+        font-size: .6rem
+      }
+
+      .button-tv-text { position: relative; z-index: 1 }
+
+      .tv-badge {
+        position: relative;
+        z-index: 1;
+        padding: 3px 6px;
+        border: 1px solid rgba(255, 255, 255, .36);
+        border-radius: 100px;
+        background: rgba(7, 11, 24, .22);
+        font-size: .62rem;
+        letter-spacing: .05em
+      }
+
       .directory {
         padding: 27px 0 76px
       }
@@ -522,7 +574,7 @@
           <!-- <a class="button button-primary" href="#directory">Depoları keşfet ↓</a> -->
           <a class="button button-primary" href="https://github.com/NuvioTR/nuvio-tr-repos/issues" target="_blank" rel="noreferrer">Depo ekle ↗</a>
           <a class="button button-quiet" href="https://raw.githubusercontent.com/NuvioTR/nuvio-tr-repos/refs/heads/main/repos.json" target="_blank" rel="noreferrer">Ham JSON ↗</a>
-          <a class="button button-quiet" href="android-tv.html" target="_blank" rel="noopener">NuvioTR Android TV Uygulaması ↗</a>
+          <a class="button button-tv" href="android-tv.html" rel="noopener"><span class="tv-icon" aria-hidden="true">▶</span><span class="button-tv-text">NuvioTR Android TV Uygulaması</span><span class="tv-badge">ÖZEL</span></a>
         </div>
       </section>
       <section class="directory" id="directory" aria-labelledby="directory-title">
