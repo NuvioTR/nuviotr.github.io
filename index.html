@@ -808,7 +808,7 @@
         card.append(top, node('p', 'description', item.description || 'Bu depo için henüz bir açıklama eklenmemiş.'));
         const badges = node('div', 'badges');
         capabilities(item, type).forEach(value => {
-          const className = ['Yayın', 'Katalog', 'Arama', 'Yorumlar'].includes(value) ? 'badge capability-badge' : 'badge';
+          const className = ['Yayın', 'Katalog', 'Koleksiyon', 'Arama', 'Yorumlar'].includes(value) ? 'badge capability-badge' : 'badge';
           badges.append(node('span', className, value));
         });
         if (typeof item.origin === 'string' && item.origin.trim()) badges.append(node('span', 'badge origin-badge', item.origin.trim()));
