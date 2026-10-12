@@ -492,24 +492,24 @@
       <footer>© <span id="year"></span> NuvioTR · Android TV özel sürümü</footer>
     </main>
     <script>
-      const themeToggle = document.createElement('button');
-      const themeColor = document.querySelector('meta[name="theme-color"]');
-      themeToggle.className = 'theme-toggle';
-      themeToggle.type = 'button';
-      function applyTheme(theme) {
-        const legacy = theme === 'legacy';
-        document.documentElement.dataset.theme = legacy ? 'legacy' : 'nuvio';
-        themeToggle.textContent = legacy ? 'Nuvio teması' : 'Eski tema';
-        themeToggle.setAttribute('aria-pressed', String(legacy));
-        themeColor.content = legacy ? '#070b18' : '#0d0d0d';
-      }
-      applyTheme(localStorage.getItem('nuviotr-theme'));
-      themeToggle.addEventListener('click', () => {
-        const next = document.documentElement.dataset.theme === 'legacy' ? 'nuvio' : 'legacy';
-        localStorage.setItem('nuviotr-theme', next);
-        applyTheme(next);
-      });
-      document.querySelector('.brand').after(themeToggle);
+      // const themeToggle = document.createElement('button');
+      // const themeColor = document.querySelector('meta[name="theme-color"]');
+      // themeToggle.className = 'theme-toggle';
+      // themeToggle.type = 'button';
+      // function applyTheme(theme) {
+      //   const legacy = theme === 'legacy';
+      //   document.documentElement.dataset.theme = legacy ? 'legacy' : 'nuvio';
+      //   themeToggle.textContent = legacy ? 'Nuvio teması' : 'Eski tema';
+      //   themeToggle.setAttribute('aria-pressed', String(legacy));
+      //   themeColor.content = legacy ? '#070b18' : '#0d0d0d';
+      // }
+      // applyTheme(localStorage.getItem('nuviotr-theme'));
+      // themeToggle.addEventListener('click', () => {
+      //   const next = document.documentElement.dataset.theme === 'legacy' ? 'nuvio' : 'legacy';
+      //   localStorage.setItem('nuviotr-theme', next);
+      //   applyTheme(next);
+      // });
+      // document.querySelector('.brand').after(themeToggle);
       document.querySelector('#year').textContent = new Date().getFullYear();
     </script>
   </body>
