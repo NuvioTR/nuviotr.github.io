@@ -3,7 +3,7 @@
 [B]01 · Katalog + yayın yetenekleri[/B]
 [SIZE=4]Nuvio eklentileri daha esnek[/SIZE]
 
-Nuvio eklentilerinde katalog ve yayın yetenekleri artık birbirinden bağımsız çalışır. Yalnızca katalog sunan bir eklenti, kendi içerik raflarını gösterebilir; yayın sunan eklentiler ise seçili içeriğin kaynaklarını bulmak için kullanılabilir.
+Nuvio eklentilerinde katalog ve yayın yetenekleri artık birbirinden bağımsız çalışır. Yalnızca katalog sunan bir eklenti, kendi içerik raflarını gösterebilir; yayın sunan eklentiler ise seçili içeriğin kaynaklarını bulmak için kullanılabilir. Hem katalog hem de yayın sunan eklentiler ise tadından yenmez :)
 
 [IMG]https://nuviotr.github.io/images/1.png[/IMG]
 
