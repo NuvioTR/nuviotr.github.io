@@ -59,9 +59,12 @@ Bir depoyu kurmadan önce içeriklerini görebilirsiniz.
 
 [IMG]https://nuviotr.github.io/images/8.png[/IMG]
 
-[B]08 · Eklenti ayarları[/B]
+[B]08 · Eklenti ayarları ve mesajları[/B]
 [SIZE=4]Eklenti ayarlarını uygulamada yönetin[/SIZE]
 
 Yüklediğiniz eklentilerin ayarlarını uygulama içinden yönetebilirsiniz. Eğer geliştirici bu özelliği eklemişse, örneğin bir eklentinin güncellenmesini beklemeden domain adresini kendiniz ayarlayabilirsiniz.
+Ayrıca eklentiyle ilgili mesajları uygulama içinden görebilirsiniz.
 
 [IMG]https://nuviotr.github.io/images/9.png[/IMG]
+
+[IMG]https://nuviotr.github.io/images/10.png[/IMG]
