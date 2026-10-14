@@ -7,6 +7,8 @@ Nuvio eklentilerinde katalog ve yayın yetenekleri artık birbirinden bağımsı
 
 [IMG]https://nuviotr.github.io/images/1.png[/IMG]
 
+[IMG]https://nuviotr.github.io/images/1_2.png[/IMG]
+
 [B]02 · Siteyi katalog olarak kullanın[/B]
 [SIZE=4]Cloudstream eklentilerinden ana sayfa rafları[/SIZE]
 
@@ -22,6 +24,8 @@ Cloudstream uyumlu bir site eklentisinin ana sayfa içeriği Nuvio’ya aktarıl
 Ana sayfadaki Katalog menüsü görünmesini istediğiniz rafları seçer. Kaynak menüsü ise oynatma için kullanılacak eklentiyi belirler. Aynı eklenti hem katalog hem yayın sağlıyorsa seçimler birlikte kullanılabilir; isterseniz kaynağı sonradan değiştirebilirsiniz.
 
 [IMG]https://nuviotr.github.io/images/3.png[/IMG]
+
+[IMG]https://nuviotr.github.io/images/3_2.png[/IMG]
 
 [B]04 · Kaynak bağlamı korunur[/B]
 [SIZE=4]Seçtiğiniz sitenin içeriği doğru eklentiyle açılır[/SIZE]
@@ -49,4 +53,15 @@ Bir site eklentisi aramayı destekliyorsa, o sitenin içeriklerinde Nuvio içind
 
 NuvioTR’de listelenen güncel eklenti, katalog ve koleksiyon depolarına uygulama içinden erişebilirsiniz. İhtiyacınız olan depoyu kurabilir; kullanmadığınız depoları aynı yerden kaldırarak listenizi düzenleyebilirsiniz.
 
+Bir depoyu kurmadan önce içeriklerini görebilirsiniz.
+
 [IMG]https://nuviotr.github.io/images/7.png[/IMG]
+
+[IMG]https://nuviotr.github.io/images/8.png[/IMG]
+
+[B]08 · Eklenti ayarları[/B]
+[SIZE=4]Eklenti ayarlarını uygulamada yönetin[/SIZE]
+
+Yüklediğiniz eklentilerin ayarlarını uygulama içinden yönetebilirsiniz. Eğer geliştirici bu özelliği eklemişse, örneğin bir eklentinin güncellenmesini beklemeden domain adresini kendiniz ayarlayabilirsiniz.
+
+[IMG]https://nuviotr.github.io/images/9.png[/IMG]
