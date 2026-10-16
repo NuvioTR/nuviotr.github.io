@@ -567,6 +567,10 @@
       .origin-badge { color: #ffcdd2; border-color: rgba(229, 57, 53, .55); background: rgba(229, 57, 53, .20) }
       .plugin-content-item { display: flex; align-items: center; gap: 10px }
       .plugin-content-icon { flex: 0 0 28px; width: 28px; height: 28px; border-radius: 7px; object-fit: cover; background: var(--surface) }
+      .plugin-content-details { min-width: 0 }
+      .plugin-content-name { display: block; font-weight: 700 }
+      .plugin-short-code { display: block; margin-top: 3px; color: var(--muted); font-size: .78rem }
+      .card-short-code { margin: -7px 0 15px; color: var(--muted); font-size: .82rem }
       .repository-link { display: inline-flex; align-items: center; gap: 6px }
       .github-icon { width: 15px; height: 15px; fill: currentColor }
     </style>
@@ -786,7 +790,12 @@
               icon.onerror = () => icon.remove();
               entryElement.append(icon);
             }
-            entryElement.append(entry[field]);
+            const details = node('div', 'plugin-content-details');
+            details.append(node('span', 'plugin-content-name', entry[field]));
+            if (isCloudstream && typeof entry.shortCode === 'string' && entry.shortCode.trim()) {
+              details.append(node('span', 'plugin-short-code', 'Kısa kod: ' + entry.shortCode.trim()));
+            }
+            entryElement.append(details);
             list.append(entryElement);
           });
           modalBody.replaceChildren(list)
@@ -806,6 +815,9 @@
         details.append(node('div', 'authors', 'Yazan: ' + authors));
         top.append(avatar, details);
         card.append(top, node('p', 'description', item.description || 'Bu depo için henüz bir açıklama eklenmemiş.'));
+        if (item.origin === 'Cloudstream' && typeof item.shortCode === 'string' && item.shortCode.trim()) {
+          card.append(node('div', 'card-short-code', 'Kısa kod: ' + item.shortCode.trim()));
+        }
         const badges = node('div', 'badges');
         capabilities(item, type).forEach(value => {
           const className = ['Yayın', 'Katalog', 'Koleksiyon', 'Arama', 'Yorumlar'].includes(value) ? 'badge capability-badge' : 'badge';
